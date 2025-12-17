@@ -36,6 +36,17 @@ module ALU(
     output ng 				// 1 if (out < 0),  0 otherwise
 );
 
-	// Put your code here:
+	wire [15:0] x1 = zx ? 16'b0000000000000000 : x;     
+    wire [15:0] x2 = nx ? ~x1 : x1;      
+    wire [15:0] y1 = zy ? 16'b0000000000000000 : y;     
+    wire [15:0] y2 = ny ? ~y1 : y1;      
+
+    wire [15:0] out_f = f ? (x2 + y2) : (x2 & y2); 
+    wire [15:0] out1 = no ? ~out_f : out_f;    
+
+    assign out = out1;
+    assign zr  = (out1 == 16'b0000000000000000);
+    assign ng  = out1[15];   
+
 
 endmodule
