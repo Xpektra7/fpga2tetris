@@ -9,9 +9,12 @@ module Bit(
 	input clk,
 	input in,
 	input load,
-	output out
+	output reg out
 );
 
-	// Put your code here:
+	always @(posedge clk) begin
+		if (load)
+			out <= in;
+	end
 
 endmodule

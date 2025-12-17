@@ -16,6 +16,17 @@ module PC(
 	output [15:0] out
 );	
 	
-	// Put your code here:
+	reg [15:0] out_reg;
+	assign out = out_reg;
+
+	always @(posedge clk) begin
+		if (reset)
+			out_reg <= 16'b0;
+		else if (load)
+			out_reg <= in;
+		else if (inc)
+			out_reg <= out_reg + 16'b1;
+		// else retain previous value
+	end
 
 endmodule

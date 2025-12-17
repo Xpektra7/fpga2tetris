@@ -10,9 +10,12 @@ module Register(
 	input clk,
 	input [15:0] in,
 	input load,
-	output [15:0] out
+	output reg [15:0] out
 );
 
-	// Put your code here:
+	always @(posedge clk) begin
+		if (load)
+			out <= in;
+	end
 
 endmodule

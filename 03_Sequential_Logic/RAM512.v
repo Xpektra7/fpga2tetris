@@ -13,6 +13,17 @@ module RAM512(
 	output [15:0] out
 );
 	
-	// Put your code here:
+	// memory array: 512 x 16-bit
+	reg [15:0] mem [0:511];
+
+	// asynchronous read
+	assign out = mem[address];
+
+	// synchronous write
+	always @(posedge clk) begin
+		if (load)
+			mem[address] <= in;
+	end
 
 endmodule
+  

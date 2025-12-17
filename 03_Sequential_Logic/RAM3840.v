@@ -13,6 +13,16 @@ module RAM3840(
 	output [15:0] out
 );
 	
-	// Put your code here:
+	// memory array: 3840 x 16-bit (addresses 0..3839)
+	reg [15:0] mem [0:3839];
+
+	// asynchronous read
+	assign out = mem[address];
+
+	// synchronous write
+	always @(posedge clk) begin
+		if (load)
+			mem[address] <= in;
+	end
 
 endmodule
