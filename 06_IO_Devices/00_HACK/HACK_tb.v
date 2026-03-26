@@ -108,7 +108,6 @@ module HACK_tb();
 	end
 
 	initial begin
-		$dumpfile("HACK_tb.vcd");
   		$dumpvars(0, HACK_tb);
 		
 		$display("------------------------");

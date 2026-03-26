@@ -28,7 +28,6 @@ module HalfAdder_tb();
 	endtask
 	  
   	initial begin
-  		$dumpfile("HalfAdder_tb.vcd");
   		$dumpvars(0, HalfAdder_tb);
 		
 		$display("------------------------");

@@ -28,7 +28,6 @@ module Xor_tb();
 	 
 	// Test 
   	initial begin
-  		$dumpfile("Xor_tb.vcd");
   		$dumpvars(0, Xor_tb);
 		
 		$display("------------------------");

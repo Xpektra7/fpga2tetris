@@ -37,7 +37,6 @@ module Mux8Way16_tb();
 	endtask
 	  
   	initial begin
-  		$dumpfile("Mux8Way16_tb.vcd");
   		$dumpvars(0, Mux8Way16_tb);
 		
 		$display("------------------------");

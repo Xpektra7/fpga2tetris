@@ -30,8 +30,7 @@ module DMux_tb();
 	
 	// Test 
   	initial begin
-  		$dumpfile("DMux_tb.vcd");
-  		$dumpvars(0, DMux_tb);
+		$dumpvars(0, DMux_tb);
 		
 		$display("------------------------");
 		$display("Testbench: DMux");

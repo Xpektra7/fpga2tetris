@@ -31,7 +31,6 @@ module Mux16_tb();
 	
 	// Test 
   	initial begin
-  		$dumpfile("Mux16_tb.vcd");
   		$dumpvars(0, Mux16_tb);
 		
 		$display("------------------------");

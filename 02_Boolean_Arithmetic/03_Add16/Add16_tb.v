@@ -28,7 +28,6 @@ module Add16_tb();
 	endtask
 	  
   	initial begin
-  		$dumpfile("Add16_tb.vcd");
   		$dumpvars(0, Add16_tb);
 		
 		$display("------------------------");

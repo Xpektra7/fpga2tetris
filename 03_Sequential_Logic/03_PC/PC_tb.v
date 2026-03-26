@@ -43,7 +43,6 @@ module PC_tb();
 	endtask
 	  
   	initial begin
-  		$dumpfile("PC_tb.vcd");
   		$dumpvars(0, PC_tb);
 		
 		$display("------------------------");

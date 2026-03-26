@@ -72,7 +72,6 @@ module LCD_tb();
 	endtask
 
 	initial begin
-		$dumpfile("LCD_tb.vcd");
   		$dumpvars(0, LCD_tb);
 		
 		$display("------------------------");

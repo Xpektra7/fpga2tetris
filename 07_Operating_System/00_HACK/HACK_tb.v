@@ -42,7 +42,6 @@ assign RX = uart[0];
 		spi <= {spi[39:0],1'b0};
 	
 initial begin
-	$dumpfile("HACK_tb.vcd");
 	$dumpvars(0, HACK_tb);
 	
 	#15000

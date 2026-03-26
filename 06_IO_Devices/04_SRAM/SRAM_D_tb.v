@@ -55,7 +55,6 @@ module SRAM_D_tb();
 	endtask
 
 	initial begin
-		$dumpfile("SRAM_D_tb.vcd");
   		$dumpvars(0, SRAM_D_tb);
 		
 		$display("------------------------");

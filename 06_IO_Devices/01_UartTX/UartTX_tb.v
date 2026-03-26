@@ -57,7 +57,6 @@ module UartTX_tb();
 	endtask
 
 	initial begin
-		$dumpfile("UartTX_tb.vcd");
   		$dumpvars(0, UartTX_tb);
 		
 		$display("------------------------");

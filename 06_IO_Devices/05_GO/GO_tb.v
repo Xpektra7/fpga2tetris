@@ -56,7 +56,6 @@ module GO_tb();
 	endtask
 
 	initial begin
-		$dumpfile("GO_tb.vcd");
   		$dumpvars(0, GO_tb);
 		
 		$display("------------------------");

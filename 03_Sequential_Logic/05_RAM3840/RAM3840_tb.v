@@ -43,7 +43,6 @@ module RAM3840_tb();
 	endtask
 	  
   	initial begin
-  		$dumpfile("RAM3840_tb.vcd");
   		$dumpvars(0, RAM3840_tb);
 		
 		$display("------------------------");

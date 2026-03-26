@@ -28,7 +28,6 @@ module Nand_tb();
 	  
   	// Test	
 	initial begin
-  		$dumpfile("Nand_tb.vcd");
   		$dumpvars(0, Nand_tb);
 		
 		$display("------------------------");

@@ -43,7 +43,6 @@ module ALU_tb();
 	endtask
 	  
   	initial begin
-  		$dumpfile("ALU_tb.vcd");
   		$dumpvars(0, ALU_tb);
 		
 		$display("------------------------");

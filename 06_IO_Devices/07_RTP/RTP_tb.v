@@ -64,7 +64,6 @@ module RTP_tb();
 	endtask
 
 	initial begin
-		$dumpfile("RTP_tb.vcd");
   		$dumpvars(0, RTP_tb);
 		
 		$display("------------------------");

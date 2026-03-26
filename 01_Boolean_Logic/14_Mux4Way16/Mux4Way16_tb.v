@@ -33,7 +33,6 @@ module Mux4Way16_tb();
 	 
 	// Test 
   	initial begin
-  		$dumpfile("Mux4Way16_tb.vcd");
   		$dumpvars(0, Mux4Way16_tb);
 		
 		$display("------------------------");

@@ -43,7 +43,6 @@ module RAM512_tb();
 	endtask
 	  
   	initial begin
-  		$dumpfile("RAM512_tb.vcd");
   		$dumpvars(0, RAM512_tb);
 		
 		$display("------------------------");

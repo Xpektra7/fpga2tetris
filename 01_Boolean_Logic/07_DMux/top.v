@@ -6,6 +6,6 @@ module top(
 	output LED2
 );
 
-	DMux DMUX(.in(BUT1),.sel(BUT2),.a(LED1),.b(LED2));
+	DMux u1(.in(BUT1),.sel(BUT2),.a(LED1),.b(LED2));
 	
 endmodule

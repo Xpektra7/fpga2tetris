@@ -69,7 +69,6 @@ module CPU_tb();
 	
 	// Test  
   	initial begin
-  		$dumpfile("CPU_tb.vcd");
   		$dumpvars(0, CPU_tb);
 		
 		$display("------------------------");

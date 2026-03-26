@@ -20,7 +20,6 @@ module HACK_tb();
 	// Test
 	always #0.5 CLK = ~CLK;
 	initial begin
-  		$dumpfile("HACK_tb.vcd");
   		$dumpvars(0, HACK_tb);
 
 		#4000

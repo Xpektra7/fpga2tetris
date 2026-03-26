@@ -136,7 +136,6 @@ module Memory_tb();
 	
 	// Test 
   	initial begin
-  		$dumpfile("Memory_tb.vcd");
   		$dumpvars(0, Memory_tb);
 		
 		$display("------------------------");

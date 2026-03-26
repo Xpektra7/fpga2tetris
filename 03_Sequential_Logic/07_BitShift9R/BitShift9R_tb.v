@@ -44,7 +44,6 @@ module BitShift9R_tb();
 	
 	// Test  
   	initial begin
-  		$dumpfile("BitShift9R_tb.vcd");
   		$dumpvars(0, BitShift9R_tb);
 		
 		$display("------------------------");

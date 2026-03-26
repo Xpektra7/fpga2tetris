@@ -44,7 +44,6 @@ module BitShift8L_tb();
 	
 	// Test  
   	initial begin
-  		$dumpfile("BitShift8L_tb.vcd");
   		$dumpvars(0, BitShift8L_tb);
 		
 		$display("------------------------");

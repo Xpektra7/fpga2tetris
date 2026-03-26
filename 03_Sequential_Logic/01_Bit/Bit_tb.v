@@ -36,7 +36,6 @@ module Bit_tb();
 	endtask
 	  
   	initial begin
-  		$dumpfile("Bit_tb.vcd");
   		$dumpvars(0, Bit_tb);
 		
 		$display("------------------------");

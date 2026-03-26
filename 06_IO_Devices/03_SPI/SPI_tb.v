@@ -64,7 +64,6 @@ module SPI_tb();
 	endtask
 
 	initial begin
-		$dumpfile("SPI_tb.vcd");
   		$dumpvars(0, SPI_tb);
 		
 		$display("------------------------");
