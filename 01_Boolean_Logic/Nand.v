@@ -1,8 +1,8 @@
 /**
- * Nand gate: 
+ * Nand gate:
  * out = 0 if (a == 1 and b == 1)
  *       1 otherwise
- */
+*/
 
 `default_nettype none
 module Nand(

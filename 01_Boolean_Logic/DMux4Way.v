@@ -15,10 +15,17 @@ module DMux4Way(
 	output c,
 	output d
 );
-	
+/*
 	assign a = sel == 2'b00 ? in : 1'b0 ;
 	assign b = sel == 2'b01 ? in : 1'b0 ;
 	assign c = sel == 2'b10 ? in : 1'b0 ;
 	assign d = sel == 2'b11 ? in : 1'b0 ;
+*/
+    wire ch1,ch2;
+
+    DMux(in,sel[1],ch1,ch2);
+    DMux(ch1,sel[0],a,b);
+    DMux(ch2,sel[0],c,d);
+
 
 endmodule

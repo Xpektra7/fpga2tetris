@@ -1,4 +1,4 @@
-timestamp: "26122715177"
+timestamp: "28053507186"
 arch: ICE40
 fpga_info {
   fpga_id: "ice40hx1k-vq100"
@@ -12,7 +12,7 @@ fpga_info {
 environment {
   platform_id: "linux-x86-64"
   is_windows: false
-  terminal_mode: FORCE_PIPE
+  terminal_mode: FORCE_TERMINAL
   theme_name: "light"
   debug_level: 0
   yosys_path: "/home/xpektra/.apio/packages/oss-cad-suite/share/yosys"

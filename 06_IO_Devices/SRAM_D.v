@@ -8,7 +8,6 @@
  * out = DATA (DATA is configured as input)
  * CSX =0;
  */
-`default_nettype none
 module SRAM_D(
 	input clk,
 	input load,
@@ -19,7 +18,7 @@ module SRAM_D(
 	output OEX,		// SRAM output_enable_not
 	output WEX			// SRAM write_enable_not
 );
-	
+
 	// Put your code here:
 
 endmodule

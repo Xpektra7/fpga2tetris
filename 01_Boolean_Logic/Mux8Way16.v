@@ -1,6 +1,6 @@
 /**
- * 16-bit multiplexor: 
- * for i = 0..15 out[i] = a[i] if sel == 0 
+ * 16-bit multiplexor:
+ * for i = 0..15 out[i] = a[i] if sel == 0
  *                        b[i] if sel == 1
  */
 
@@ -17,7 +17,7 @@ module Mux8Way16(
    	input [2:0] sel,
 	output [15:0] out
 );
-
+/*
 	assign out = 	(sel == 3'b000) ? a :
 					(sel == 3'b001) ? b :
 					(sel == 3'b010) ? c :
@@ -25,5 +25,12 @@ module Mux8Way16(
 					(sel == 3'b100) ? e :
 					(sel == 3'b101) ? f :
 					(sel == 3'b110) ? g : h;
+*/
+
+wire upper4 = Mux4Way16(a,b,c,d,sel[2:1]);
+wire lower4 = Mux4Way16(e,f,g,h,sel[2:1]);
+
+assign out = Mux16(upper4,lower4,sel[0]);
+
 
 endmodule
