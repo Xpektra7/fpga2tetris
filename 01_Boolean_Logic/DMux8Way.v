@@ -36,5 +36,6 @@ module DMux8Way(
     DMux d3(ch2,sel[0],c,d);
     DMux d4(ch3,sel[0],e,f);
     DMux d5(ch4,sel[0],g,h);
+		// side note: 
 
 endmodule
