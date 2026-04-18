@@ -31,10 +31,10 @@ module DMux8Way(
 */
 
     wire ch1,ch2,ch3,ch4;
-    DMux4Way(in,sel[2:1],ch1,ch2,ch3,ch4);
-    DMux(ch1,sel[0],a,b);
-    DMux(ch2,sel[0],c,d);
-    DMux(ch3,sel[0],e,f);
-    DMux(ch4,sel[0],g,h);
+    DMux4Way d1(in,sel[2:1],ch1,ch2,ch3,ch4);
+    DMux d2(ch1,sel[0],a,b);
+    DMux d3(ch2,sel[0],c,d);
+    DMux d4(ch3,sel[0],e,f);
+    DMux d5(ch4,sel[0],g,h);
 
 endmodule

@@ -1,0 +1,33 @@
+timestamp: "19001142285"
+arch: ICE40
+fpga_info {
+  fpga_id: "ice40hx1k-vq100"
+  part_num: "ICE40HX1K-VQ100"
+  size: "1k"
+  ice40 {
+    type: "hx1k"
+    pack: "vq100"
+  }
+}
+environment {
+  platform_id: "linux-x86-64"
+  is_windows: false
+  terminal_mode: FORCE_TERMINAL
+  theme_name: "light"
+  debug_level: 0
+  yosys_path: "/home/xpektra/.apio/packages/oss-cad-suite/share/yosys"
+  trellis_path: "/home/xpektra/.apio/packages/oss-cad-suite/share/trellis"
+  scons_shell_id: "bash"
+}
+apio_env_params {
+  env_name: "default"
+  board_id: "ice40-hx1k-evb"
+  top_module: "main"
+}
+target {
+  sim {
+    force_sim: false
+    no_gtkwave: false
+    detach_gtkwave: false
+  }
+}

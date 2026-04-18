@@ -9,6 +9,8 @@ module Inc16(
 	output [15:0] out
 );
 
+    // First try
+    /**
 	wire carry0 = in[0] & 1'b1;
 	wire carry1 = in[1] & carry0;
 	wire carry2 = in[2] & carry1;
@@ -24,7 +26,6 @@ module Inc16(
 	wire carry12 = in[12] & carry11;
 	wire carry13 = in[13] & carry12;
 	wire carry14 = in[14] & carry13;
-	wire carry15 = in[15] & carry14;
 
 	assign out[0] = in[0] ^ 1'b1;
 	assign out[1] = in[1] ^ carry0;
@@ -42,5 +43,16 @@ module Inc16(
 	assign out[13] = in[13] ^ carry12;
 	assign out[14] = in[14] ^ carry13;
 	assign out[15] = in[15] ^ carry14;
+
+	**/
+
+	// Second Try : im getting the hand of this (@@), i also feel like this is impacting my ability to think modularly
+
+	/** Add16 inc(in,16'b1,out); **/
+
+	// Lets try to copy that AI cheat
+	assign out = in + 1'b1 ;
+
+	// side note : works like magic innit (TT)
 
 endmodule

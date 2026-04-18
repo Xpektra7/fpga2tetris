@@ -2,7 +2,7 @@
  * The ALU (Arithmetic Logic Unit).
  * Computes one of the following functions:
  * x+y, x-y, y-x, 0, 1, -1, x, y, -x, -y, !x, !y,
- * x+1, y+1, x-1, y-1, x&y, x|y on two 16-bit inputs, 
+ * x+1, y+1, x-1, y-1, x&y, x|y on two 16-bit inputs,
  * according to 6 input bits denoted zx,nx,zy,ny,f,no.
  * In addition, the ALU computes two 1-bit outputs:
  * if the ALU output == 0, zr is set to 1; otherwise zr is set to 0;
@@ -36,17 +36,17 @@ module ALU(
     output ng 				// 1 if (out < 0),  0 otherwise
 );
 
-	wire [15:0] x1 = zx ? 16'b0000000000000000 : x;     
-    wire [15:0] x2 = nx ? ~x1 : x1;      
-    wire [15:0] y1 = zy ? 16'b0000000000000000 : y;     
-    wire [15:0] y2 = ny ? ~y1 : y1;      
+	wire [15:0] x1 = zx ? 16'b0000000000000000 : x;
+    wire [15:0] x2 = nx ? ~x1 : x1;
+    wire [15:0] y1 = zy ? 16'b0000000000000000 : y;
+    wire [15:0] y2 = ny ? ~y1 : y1;
 
-    wire [15:0] out_f = f ? (x2 + y2) : (x2 & y2); 
-    wire [15:0] out1 = no ? ~out_f : out_f;    
+    wire [15:0] out_f = f ? (x2 + y2) : (x2 & y2);
+    wire [15:0] out1 = no ? ~out_f : out_f;
 
     assign out = out1;
     assign zr  = (out1 == 16'b0000000000000000);
-    assign ng  = out1[15];   
+    assign ng  = out1[15];
 
-
+    // here the 2nd time, nothin to change actually
 endmodule

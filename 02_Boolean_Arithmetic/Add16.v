@@ -11,6 +11,9 @@ module Add16(
 	output [15:0] out
 );
 
+
+    // First Implemntation
+    /**
 	wire carry0 = a[0] & b[0];
 	wire carry1 = ( a[1] & b[1] ) | (carry0 & ( a[1] ^ b[1] ));
 	wire carry2 = ( a[2] & b[2] ) | (carry1 & ( a[2] ^ b[2] ));
@@ -26,7 +29,6 @@ module Add16(
 	wire carry12 = ( a[12] & b[12] ) | (carry11 & ( a[12] ^ b[12] ));
 	wire carry13 = ( a[13] & b[13] ) | (carry12 & ( a[13] ^ b[13] ));
 	wire carry14 = ( a[14] & b[14] ) | (carry13 & ( a[14] ^ b[14] ));
-	wire carry15 = ( a[15] & b[15] ) | (carry14 & ( a[15] ^ b[15] ));
 
 	assign out[0] = a[0] ^ b[0];
 	assign out[1] = ( a[1] ^ b[1] ) ^ carry0;
@@ -44,5 +46,34 @@ module Add16(
 	assign out[13] = (a[13] ^ b[13]) ^ carry12;
 	assign out[14] = (a[14] ^ b[14]) ^ carry13;
 	assign out[15] = (a[15] ^ b[15]) ^ carry14;
+	**/
+
+    // Second Implementation using modules
+    /**
+    wire [15:0] carry;
+    assign carry[0] = 1'b0;
+
+    genvar i;
+    generate
+
+        for (i = 0; i < 15; i++ ) begin : genadder
+
+        FullAdder fa(
+            .a(a[i]),
+            .b(b[i]),
+            .c(carry[i]),
+            .sum(out[i]),
+            .carry(carry[i + 1])
+        );
+
+        end
+    endgenerate
+
+    **/
+
+    // cheat from AI : this is a violation of every neuron i spent writing and thinking of the first 2 implentations. God sees all sha.
+    assign out = a + b;
+
+
 
 endmodule

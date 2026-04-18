@@ -27,10 +27,12 @@ module Mux8Way16(
 					(sel == 3'b110) ? g : h;
 */
 
-wire upper4 = Mux4Way16(a,b,c,d,sel[2:1]);
-wire lower4 = Mux4Way16(e,f,g,h,sel[2:1]);
+    wire [15:0] upper4,lower4;
 
-assign out = Mux16(upper4,lower4,sel[0]);
+    Mux4Way16 m1(a,b,c,d,sel[2:1],upper4);
+    Mux4Way16 m2(e,f,g,h,sel[2:1],lower4);
+
+    Mux16 m3(upper4,lower4,sel[0],out);
 
 
 endmodule
