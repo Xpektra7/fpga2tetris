@@ -2,49 +2,66 @@
 
 This document describes the tooling setup for fpga2tetris development.
 
-## Verilog Linting with Verilator
+## Verilog Linting with Verible
 
-Verilator is used for Verilog linting. Note: Zed has a built-in Verilog language server, but it may have issues with this project's structure.
+Verible provides the Verilog language server and linter for this project.
 
 ### Installation
 
 ```bash
 # Linux
-apt install verilator
+yay -S verible
 
 # macOS
-brew install verilator
+brew install verible
 ```
 
 ### Wrapper Script (vl)
 
-A wrapper script `vl` is provided in the project root that handles module discovery correctly:
+A wrapper script `vl` is provided in the project root that runs `verible-verilog-lint` with the repo file list:
 
 ```bash
 # Test from project root
 ./vl 01_Boolean_Logic/DMux4Way.v
 ```
 
+### Verible File List
+
+The root `verible.filelist` file lists all Verilog source directories so Verible can resolve modules across the tree.
+
 ### Zed Integration (Optional)
 
-To use with Zed, add to `~/.config/zed/settings.json`:
+To use with Zed, add Verible to `~/.config/zed/settings.json`:
 
 ```json
 {
   "languages": {
     "Verilog": {
-      "enable_language_server": false
+      "language_servers": ["verible-verilog-ls"]
+    }
+  },
+  "lsp": {
+    "verible-verilog-ls": {
+      "initialization_options": {
+        "file_list_path": "verible.filelist"
+      }
     }
   }
 }
 ```
 
-This disables Zed's built-in Verilog linter which may have issues. Use the `vl` script manually instead.
+### VS Code Integration (Optional)
+
+If you use VS Code, point your Verilog extension or LSP config at `verible-verilog-ls` and pass `verible.filelist` as the file list path.
+
+### Neovim Integration (Optional)
+
+If you use Neovim with `nvim-lspconfig`, configure the Verible server command to include `--file_list_path=verible.filelist`.
 
 ### Manual Usage
 
 ```bash
-verilator --lint-only -y 01_Boolean_Logic <path-to-file>
+verible-verilog-lint --file_list_path=verible.filelist <path-to-file>
 ```
 
 ## APIO Simulation

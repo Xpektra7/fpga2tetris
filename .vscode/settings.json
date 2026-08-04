@@ -1,0 +1,9 @@
+{
+  "verilog.languageServer.veribleVerilogLs.enabled": true,
+  "verilog.languageServer.veribleVerilogLs.path": "verible-verilog-ls",
+  "verilog.languageServer.veribleVerilogLs.arguments": "--file_list_path=verible.filelist",
+  "verilog.linting.veribleVerilogLint.arguments": "--file_list_path=verible.filelist",
+  "verilog.linting.veribleVerilogLint.runAtFileLocation": true,
+  "verilog.linting.verilator.arguments": "",
+  "verilog.linting.verilator.runAtFileLocation": false
+}

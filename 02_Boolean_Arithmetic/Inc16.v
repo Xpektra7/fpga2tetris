@@ -51,7 +51,7 @@ module Inc16(
 	/** Add16 inc(in,16'b1,out); **/
 
 	// Lets try to copy that AI cheat
-	assign out = in + 1'b1 ;
+	assign out = in + 1'b1;
 
 	// side note : works like magic innit (TT)
 
