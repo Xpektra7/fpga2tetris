@@ -6,11 +6,11 @@
 
 `default_nettype none
 module And(
-	input a,
-	input b,
-	output out
+  input a,
+  input b,
+  output out
 );
 
-	assign out = a & b;
+  assign out = a & b;
 
 endmodule

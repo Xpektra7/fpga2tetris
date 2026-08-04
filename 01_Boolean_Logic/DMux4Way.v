@@ -8,18 +8,18 @@
 
 `default_nettype none
 module DMux4Way(
-	input in,
-	input [1:0] sel,
+  input in,
+  input [1:0] sel,
     output a,
-	output b,
-	output c,
-	output d
+  output b,
+  output c,
+  output d
 );
 /*
-	assign a = sel == 2'b00 ? in : 1'b0 ;
-	assign b = sel == 2'b01 ? in : 1'b0 ;
-	assign c = sel == 2'b10 ? in : 1'b0 ;
-	assign d = sel == 2'b11 ? in : 1'b0 ;
+  assign a = sel == 2'b00 ? in : 1'b0 ;
+  assign b = sel == 2'b01 ? in : 1'b0 ;
+  assign c = sel == 2'b10 ? in : 1'b0 ;
+  assign d = sel == 2'b11 ? in : 1'b0 ;
 */
     wire ch1,ch2;
 

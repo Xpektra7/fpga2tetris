@@ -6,12 +6,12 @@
 
 `default_nettype none
 module Mux(
-	input a,
-	input b,
-	input sel,
-	output out
+  input a,
+  input b,
+  input sel,
+  output out
 );
 
-	assign out = sel ? b : a ;
+  assign out = sel ? b : a ;
 
 endmodule

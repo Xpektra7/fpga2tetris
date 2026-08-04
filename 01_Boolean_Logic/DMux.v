@@ -6,13 +6,13 @@
 
 `default_nettype none
 module DMux(
-	input in,
-	input sel,
+  input in,
+  input sel,
     output a,
-	output b
+  output b
 );
 
-	assign a = sel ? 1'b0 : in;
-	assign b = sel ? in : 1'b0;
+  assign a = sel ? 1'b0 : in;
+  assign b = sel ? in : 1'b0;
 
 endmodule

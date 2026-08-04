@@ -23,20 +23,20 @@
 
 `default_nettype none
 module ALU(
-	input [15:0] x,		// input x (16 bit)
-	input [15:0] y,		// input y (16 bit)
-    input zx, 				// zero the x input?
-    input nx, 				// negate the x input?
-    input zy, 				// zero the y input?
-    input ny, 				// negate the y input?
-    input f,  				// compute out = x + y (if 1) or x & y (if 0)
-    input no, 				// negate the out output?
-    output [15:0] out, 			// 16-bit output
-    output zr, 				// 1 if (out == 0), 0 otherwise
-    output ng 				// 1 if (out < 0),  0 otherwise
+  input [15:0] x,   // input x (16 bit)
+  input [15:0] y,   // input y (16 bit)
+    input zx,         // zero the x input?
+    input nx,         // negate the x input?
+    input zy,         // zero the y input?
+    input ny,         // negate the y input?
+    input f,          // compute out = x + y (if 1) or x & y (if 0)
+    input no,         // negate the out output?
+    output [15:0] out,      // 16-bit output
+    output zr,        // 1 if (out == 0), 0 otherwise
+    output ng         // 1 if (out < 0),  0 otherwise
 );
 
-	wire [15:0] x1 = zx ? 16'b0000000000000000 : x;
+  wire [15:0] x1 = zx ? 16'b0000000000000000 : x;
     wire [15:0] x2 = nx ? ~x1 : x1;
     wire [15:0] y1 = zy ? 16'b0000000000000000 : y;
     wire [15:0] y2 = ny ? ~y1 : y1;
