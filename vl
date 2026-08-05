@@ -1,5 +1,5 @@
 #!/bin/bash
-# Verible lint wrapper for fpga2tetris
+# Verilator lint wrapper for fpga2tetris
 # Usage: vl <verilog-file>
 
 # Get absolute path to project root
@@ -18,6 +18,30 @@ fi
 
 cd "$PROJECT_ROOT"
 
-verible-verilog-lint \
-    --file_list_path=verible.filelist \
+verilator --lint-only \
+    -y 01_Boolean_Logic \
+    -y 02_Boolean_Arithmetic \
+    -y 03_Sequential_Logic/00_DFF \
+    -y 03_Sequential_Logic/01_Bit \
+    -y 03_Sequential_Logic/02_Register \
+    -y 03_Sequential_Logic/03_PC \
+    -y 03_Sequential_Logic/04_RAM512 \
+    -y 03_Sequential_Logic/05_RAM3840 \
+    -y 03_Sequential_Logic/06_BitShift8L \
+    -y 03_Sequential_Logic/07_BitShift9R \
+    -y 03_Sequential_Logic/08_blinky \
+    -y 04_Computer_Architecture/01_CPU \
+    -y 04_Computer_Architecture/02_Memory \
+    -y 04_Computer_Architecture/03_Clock25_Reset20 \
+    -y 04_Computer_Architecture/04_HACK \
+    -y 05_IO_Devices/00_HACK \
+    -y 05_IO_Devices/01_UartTX \
+    -y 05_IO_Devices/02_UartRX \
+    -y 05_IO_Devices/03_SPI \
+    -y 05_IO_Devices/04_SRAM \
+    -y 05_IO_Devices/05_GO \
+    -y 05_IO_Devices/06_LCD \
+    -y 05_IO_Devices/07_RTP \
+    -Wall \
+    -Wwarn-UNOPTFLAT \
     "$FILE"

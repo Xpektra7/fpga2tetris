@@ -47,6 +47,19 @@ module Inc16(
   **/
 
   // Second Try : im getting the hand of this (@@), i also feel like this is impacting my ability to think modularly
+  // genvar i;
+  // generate
+  //   for (i = 0; i < 15; i++ ) begin : genadder
+
+  //     FullAdder fa(
+  //           .a(in[i]),
+  //           .b(1'b0),
+  //           .cin(i == 0 ? 1'b1 : genadder[i-1].fa.cout),
+  //           .sum(out[i]),
+  //           .cout()
+  //       );
+  //   end
+  // endgenerate
 
   /** Add16 inc(in,16'b1,out); **/
 

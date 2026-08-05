@@ -9,6 +9,6 @@ module Buffer(
   output out
 );
 
-  assign out = in; 
+  assign out = in;
 
 endmodule

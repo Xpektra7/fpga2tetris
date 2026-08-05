@@ -23,9 +23,9 @@ module DMux4Way(
 */
     wire ch1,ch2;
 
-    DMux d1(in,sel[1],ch1,ch2);
-    DMux d2(ch1,sel[0],a,b);
-    DMux d3(ch2,sel[0],c,d);
+    DMux d1(.in(in),.sel(sel[1]),.a(ch1),.b(ch2));
+    DMux d2(.in(ch1),.sel(sel[0]),.a(a),.b(b));
+    DMux d3(.in(ch2),.sel(sel[0]),.a(c),.b(d));
 
 
 endmodule

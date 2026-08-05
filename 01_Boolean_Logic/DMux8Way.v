@@ -31,13 +31,11 @@ module DMux8Way(
 */
 
     wire ch1,ch2,ch3,ch4;
-    DMux4Way d1(in,sel[2:1],ch1,ch2,ch3,ch4);
-    DMux d2(ch1,sel[0],a,b);
-    DMux d3(ch2,sel[0],c,d);
-    DMux d4(ch3,sel[0],e,f);
-    DMux
-
-    d5(ch4,sel[0],g,h);
+    DMux4Way d1(.in(in),.sel(sel[2:1]),.a(ch1),.b(ch2),.c(ch3),.d(ch4));
+    DMux d2(.in(ch1),.sel(sel[0]),.a(a),.b(b));
+    DMux d3(.in(ch2),.sel(sel[0]),.a(c),.b(d));
+    DMux d4(.in(ch3),.sel(sel[0]),.a(e),.b(f));
+    DMux d5(.in(ch4),.sel(sel[0]),.a(g),.b(h));
 
     // side note:
 

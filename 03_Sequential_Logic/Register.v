@@ -13,11 +13,17 @@ module Register(
   output reg [15:0] out
 );
 
-// put code here
-  always @(posedge clk) begin
-    if (load) begin
-      out <= in;
+  // A way to do it ( probably not the best way according to the style guide )
+  // always @(posedge clk) begin
+  //   if (load) begin
+  //     out <= in;
+  //   end
+  // end
+  genvar i;
+  generate
+    for(i=0; i < 16; i++) begin : gen_bit
+      Bit bit_inst(.clk(clk),.in(in[i]), .load(load), .out(out[i]));
     end
-  end
+  endgenerate
 
 endmodule

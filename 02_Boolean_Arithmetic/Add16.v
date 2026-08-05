@@ -12,8 +12,8 @@ module Add16(
 );
 
 
-    // First Implemntation
-    /**
+  // First Implemntation
+  /**
   wire carry0 = a[0] & b[0];
   wire carry1 = ( a[1] & b[1] ) | (carry0 & ( a[1] ^ b[1] ));
   wire carry2 = ( a[2] & b[2] ) | (carry1 & ( a[2] ^ b[2] ));
@@ -73,7 +73,5 @@ module Add16(
 
     // cheat from AI : this is a violation of every neuron i spent writing and thinking of the first 2 implentations. God sees all sha.
     assign out = a + b;
-
-
 
 endmodule
