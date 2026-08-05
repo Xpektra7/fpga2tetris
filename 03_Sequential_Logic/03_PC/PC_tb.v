@@ -5,6 +5,7 @@ module PC_tb();
 	reg clk=1;
 	reg [15:0] in;
 	reg load,inc,reset;
+	reg [15:0] n = 0;
 	wire [15:0] out;
 
 	// Part
@@ -32,7 +33,6 @@ module PC_tb();
 		out_cmp <= (reset?0:(load?in:(inc?out+1:out)));	
 	
 	reg fail = 0;
-	reg [15:0] n = 0;
 	task check;
 		#1
 		if (out != out_cmp) 
