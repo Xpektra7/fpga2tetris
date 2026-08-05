@@ -1,0 +1,37 @@
+$date
+	Tue Aug  4 23:44:08 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module Not_tb $end
+$var wire 1 ! out_cmp $end
+$var wire 1 " out $end
+$var reg 1 # fail $end
+$var reg 1 $ in $end
+$scope module NOT $end
+$var wire 1 $ in $end
+$var wire 1 " out $end
+$upscope $end
+$scope task check $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+0$
+0#
+1"
+1!
+$end
+#1
+0"
+0!
+1$
+#2

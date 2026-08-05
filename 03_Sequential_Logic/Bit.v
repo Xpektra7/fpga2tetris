@@ -1,20 +1,20 @@
 /**
- * 1-bit register:
- * If load[t] == 1 then out[t+1] = in[t]
- *    else out does not change (out[t+1] = out[t])
- */
+* 1-bit register:
+* If load[t] == 1 then out[t+1] = in[t]
+*    else out does not change (out[t+1] = out[t])
+*/
 
 `default_nettype none
 module Bit(
-	input clk,
-	input in,
-	input load,
-	output reg out
+  input clk,
+  input in,
+  input load,
+  output reg out
 );
 
-	always @(posedge clk) begin
-		if (load)
-			out <= in;
-	end
+  always @(posedge clk) begin
+    if (load)
+      out <= in;
+  end
 
 endmodule

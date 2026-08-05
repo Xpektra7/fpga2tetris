@@ -15,12 +15,6 @@ module BitShift8L(
 	output reg [7:0] out
 );
 
-	always @(posedge clk) begin
-		if (load)
-			out <= in;
-		else if (shift)
-			out <= {out[6:0], inLSB};
-		// else retain previous value
-	end
+	// put code here
 
 endmodule
