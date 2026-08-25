@@ -13,7 +13,7 @@ localparam logic [1:0] IDLE   = 2'b00,
 reg [1:0] current_state, next_state;
 
 //state memory
-always @(posedge clk) begin
+always @(posedge clk, posedge reset) begin
   if (reset == 1'b1) current_state <= IDLE;
   else current_state <= next_state;
 end
